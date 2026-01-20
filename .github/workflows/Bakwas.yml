@@ -1,0 +1,10 @@
+name: Bakwasfile
+on: push
+jobs:
+  build:              # this is the job name which u created inside your workflow 
+    runs-on: ubuntu-latest
+    steps: 
+     - name: checkout code from repo
+       uses: action/checkout@v4
+       
+     
