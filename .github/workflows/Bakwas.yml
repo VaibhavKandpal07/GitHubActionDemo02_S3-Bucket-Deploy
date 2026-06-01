@@ -1,13 +1,21 @@
 name: Bakwasfile
 on: push
+env:
+  JAVA_VERSION : 25
 jobs:
   build:              # this is the job name which u created inside your workflow 
     runs-on: ubuntu-latest
+    env:
+      NODE_JS: 11
     steps: 
      - name: checkout code from repo
        uses: actions/checkout@v4
      - name: List files in repository
        run: ls -R
+     - name: test
+       env:
+         DB_NAME: myDB
+       run: echo $DB_NAME
 
   #  deploy:
   #  runs-on: ubuntu-latest
